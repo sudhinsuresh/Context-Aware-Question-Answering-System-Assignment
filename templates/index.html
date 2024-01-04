@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Answering Web App</title>
+</head>
+<body>
+    <h1>Question Answering Web App</h1>
+    <form method="POST" action="/answer">
+        <label for="document">Document:</label>
+        <textarea name="document" rows="4" cols="50"></textarea><br>
+        <label for="question">Question:</label>
+        <input type="text" name="question"><br>
+        <input type="submit" value="Get Answer">
+    </form>
+    {% if document %}
+        <h3>Result:</h3>
+        <p>Document: {{ document }}</p>
+        <p>Question: {{ question }}</p>
+        <p>Answer: {{ response }}</p>
+    {% endif %}
+</body>
+</html>
